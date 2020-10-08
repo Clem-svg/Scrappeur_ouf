@@ -32,12 +32,18 @@ values_array = []
 return values_array
 end
 
-def hashing_crypto_name_value
-  names_array = currencies_names
-  values_array = currencies_values 
 
-  bloc_chienne = Hash[currencies_names.zip(currencies_values)]
-  return bloc_chienne
+
+  def arraying_crypto_name_value
+    names_array = currencies_names
+    values_array = currencies_values
+    bloc_chienne = [] #/ on initialise un array pour les stocker
+
+    names_array.each_with_index do |k, v|    #/ on associe pour chaque item de symbols_array un item de prices_array
+      bloc_chienne << {k => (values_array)[v]} #/ on sauvegarde sous forme d'hash dans le tableau
+    end
+    return bloc_chienne
 end
 
-puts hashing_crypto_name_value
+
+puts arraying_crypto_name_value
