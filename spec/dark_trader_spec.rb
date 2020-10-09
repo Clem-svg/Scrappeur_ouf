@@ -16,7 +16,6 @@ describe "A coherant array" do
 end
 
 
-
 describe "make_hash method, it should return an array with both arrays as mini hashes" do
   it "Should return an array matching each cryptocurrency to its value and not an error" do
     expect(arraying_crypto_name_value).to be_instance_of Array

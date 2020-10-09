@@ -26,7 +26,7 @@ def currencies_values
 values_array = []
   all_crypto_values = page.xpath('/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[3]/div/table/tbody/tr/td[5]')
   all_crypto_values.each do |crypto_value| 
-    values_array << crypto_value.text
+    values_array << crypto_value.text.delete('$,').to_f
 
   end
 return values_array
